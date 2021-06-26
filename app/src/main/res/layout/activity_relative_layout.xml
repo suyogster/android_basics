@@ -5,50 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RelativeLayout"
-    android:layout_margin="40dp">
+    android:layout_margin="40dp"
+    android:id="@+id/relativeLayoutParent"
+    >
 
     <TextView
         android:id="@+id/firstTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:textAlignment="center"
+        android:fontFamily="@font/press_start_2p"
         android:layout_height="wrap_content"
+        android:padding="20dp"
         android:text="Hello"/>
 
-    <Button
-        android:id="@+id/firstButton"
-        android:layout_below="@+id/firstTextView"
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/inputEditTextBox"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button"/>
+        android:layout_below="@id/firstTextView"
+        android:hint="Enter any text"
+        />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_below="@+id/firstButton"
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_below="@+id/firstTextView"
-        android:layout_toRightOf="@+id/firstButton"
+        android:id="@+id/submitButton"
+        android:layout_below="@+id/inputEditTextBox"
         android:layout_marginVertical="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_width="200dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="Change Text" />
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button2"
-        android:padding="20dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Nested Layout" />
-    </RelativeLayout>
 
 </RelativeLayout>
