@@ -9,6 +9,8 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    private android.widget.RelativeLayout test;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,12 +19,15 @@ public class MainActivity extends AppCompatActivity {
         Button linearLayout = findViewById(R.id.linearLayoutButton);
         Button relativeLayout = findViewById(R.id.relativeLayoutButton);
         Button listView = findViewById(R.id.listViewButton);
+        Button cardViewSpinner = findViewById(R.id.cardViewSpinnerButton);
+        Button recyclerView = findViewById(R.id.recyclerViewButton);
 
 
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent linearIntent = new Intent(MainActivity.this,LinearLayout.class);
+                linearIntent.putExtra("destination", "Linear Layout Passed from Intent");
                 startActivity(linearIntent);
             }
         });
@@ -39,6 +44,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ListViewExample.class);
+                startActivity(intent);
+            }
+        });
+
+        cardViewSpinner.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CardViewSpinner.class);
+                startActivity(intent);
+            }
+        });
+
+        recyclerView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RecyclerView.class);
                 startActivity(intent);
             }
         });
