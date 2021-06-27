@@ -2,6 +2,16 @@
     <string name="app_name">Android Basics</string>
     <string name="linear_layout">Linear Layout</string>
     <string name="relative_layout">Relative Layout</string>
+    <string name="card_view_spinner">Card View &amp; Spinner</string>
     <string name="power_workshop">Power Workshop 2021</string>
     <string name="list_view">List View Example</string>
+    <string name="recycler_view">Recycler View</string>
+    <string-array name="random_names">
+        <item>John</item>
+        <item>Harry</item>
+        <item>Natsu</item>
+        <item>Ichigo</item>
+        <item>Naruto</item>
+        <item>Raiden</item>
+    </string-array>
 </resources>
