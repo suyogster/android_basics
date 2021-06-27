@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ang_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidBasics">
-        <activity android:name=".ListViewExample"></activity>
+        <activity android:name=".RecyclerView"></activity>
+        <activity android:name=".CardViewSpinner" />
+        <activity android:name=".ListViewExample" />
         <activity android:name=".RelativeLayout" />
         <activity android:name=".LinearLayout" />
         <activity android:name=".MainActivity">
