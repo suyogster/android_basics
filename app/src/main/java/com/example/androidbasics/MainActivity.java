@@ -9,8 +9,6 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    private android.widget.RelativeLayout test;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         Button listView = findViewById(R.id.listViewButton);
         Button cardViewSpinner = findViewById(R.id.cardViewSpinnerButton);
         Button recyclerView = findViewById(R.id.recyclerViewButton);
+        Button navigation = findViewById(R.id.navigationButton);
 
 
         linearLayout.setOnClickListener(new View.OnClickListener() {
@@ -63,6 +62,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        navigation.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, NavigationHost.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 
