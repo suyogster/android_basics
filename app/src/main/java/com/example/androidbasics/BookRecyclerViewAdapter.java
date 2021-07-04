@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -51,6 +52,15 @@ public class BookRecyclerViewAdapter extends RecyclerView.Adapter<BookRecyclerVi
                 Toast.makeText(context, books.get(position).getName() + " Selected", Toast.LENGTH_LONG).show();
             }
         });
+        // 0 -> position of array
+        // isExpanded() -> true
+        // !isExpanded() -> false
+//        if(books.get(position).isExpanded()){
+//            holder.expandedRelLayout.setVisibility(View.VISIBLE);
+//            holder.downArrow.setVisibility(View.GONE);
+//        }else {
+//
+//        }
     }
 
     @Override
@@ -69,11 +79,41 @@ public class BookRecyclerViewAdapter extends RecyclerView.Adapter<BookRecyclerVi
         private ImageView imageBook;
         private TextView textName;
 
+        private ImageView downArrow, upArrow;
+        private RelativeLayout expandedRelLayout;
+        private TextView textAuthor, textShortDescription;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             parent = itemView.findViewById(R.id.bookCardViewParent);
             imageBook = itemView.findViewById(R.id.imgBook);
             textName = itemView.findViewById(R.id.textBookName);
+
+            downArrow = itemView.findViewById(R.id.expandCardButton);
+            upArrow = itemView.findViewById(R.id.collapsedCardLayout);
+            expandedRelLayout = itemView.findViewById(R.id.expandedRelLayout);
+            textAuthor = itemView.findViewById(R.id.authorTextValue);
+            textShortDescription = itemView.findViewById(R.id.textShortDescriptionValue);
+
+            downArrow.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Book book = books.get(getAdapterPosition());
+                    book.setExpanded(!book.isExpanded());
+                    notifyItemChanged(getAdapterPosition());
+                }
+            });
+
+            upArrow.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Book book = books.get(getAdapterPosition());
+                    book.setExpanded(!book.isExpanded());
+                    notifyItemChanged(getAdapterPosition());
+                }
+            });
+
+
 
         }
     }
