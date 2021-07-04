@@ -18,9 +18,10 @@
         android:id="@+id/linearLayoutButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="104dp"
         android:text="@string/linear_layout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
@@ -42,22 +43,21 @@
         android:id="@+id/relativeLayoutButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
         android:text="@string/relative_layout"
-        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintBaseline_toBaselineOf="@+id/linearLayoutButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutButton"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toEndOf="@+id/linearLayoutButton" />
 
     <Button
         android:id="@+id/listViewButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="140dp"
+        android:layout_height="59dp"
         android:layout_marginTop="44dp"
         android:text="@string/list_view"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.149"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayoutButton"
         app:layout_constraintVertical_bias="0.0" />
@@ -88,35 +88,50 @@
 
     <Button
         android:id="@+id/cardViewSpinnerButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="163dp"
+        android:layout_height="59dp"
         android:text="@string/card_view_spinner"
-        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintBaseline_toBaselineOf="@+id/listViewButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listViewButton"
-        app:layout_constraintVertical_bias="0.189" />
+        app:layout_constraintHorizontal_bias="0.544"
+        app:layout_constraintStart_toEndOf="@+id/listViewButton" />
 
     <Button
         android:id="@+id/recyclerViewButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="257dp"
+        android:layout_height="52dp"
         android:text="@string/recycler_view"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.519"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardViewSpinnerButton"
-        app:layout_constraintVertical_bias="0.189"/>
+        app:layout_constraintVertical_bias="0.138" />
 
     <Button
         android:id="@+id/navigationButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="259dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="132dp"
         android:text="@string/navigation"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerViewButton" />
+
+    <Button
+        android:id="@+id/bookRecyclerViewButton"
+        android:layout_width="258dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="60dp"
+        android:text="@string/bookView"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/navigationButton"
+        app:layout_constraintVertical_bias="0.461" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

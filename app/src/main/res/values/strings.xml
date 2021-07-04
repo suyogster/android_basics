@@ -7,6 +7,7 @@
     <string name="list_view">List View Example</string>
     <string name="recycler_view">Recycler View</string>
     <string name="navigation">Navigation/Fragments</string>
+    <string name="bookView">Book Recycler View</string>
     <string-array name="random_names">
         <item>John</item>
         <item>Harry</item>
