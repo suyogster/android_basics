@@ -9,11 +9,17 @@
     android:layout_margin="5dp">
 
     <RelativeLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content">
+
+        // Initial Component before expansion
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:id="@+id/collapsedCardLayout">
         <ImageView
-            android:layout_width="130dp"
-            android:layout_height="130dp"
+            android:layout_width="200dp"
+            android:layout_height="220dp"
             android:id="@+id/imgBook"
             android:src="@mipmap/ic_launcher"/>
         
@@ -27,6 +33,59 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="7dp"
             android:id="@+id/textBookName"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_down_arrow"
+            android:layout_below="@id/imgBook"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="7dp"
+            android:id="@+id/expandCardButton"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/collapsedCardLayout"
+>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Author:"
+                android:id="@+id/authorText"/>
+            <TextView
+                android:id="@+id/authorTextValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Author Name Value"
+                android:layout_below="@id/authorText"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Short description"
+                android:id="@+id/textShortDescription"
+                android:layout_below="@id/authorTextValue"
+                android:layout_marginTop="10dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textShortDescriptionValue"
+                android:text="Short Description Value"
+                android:layout_below="@id/textShortDescription"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_up_arrow"
+                android:layout_below="@id/textShortDescription"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/CollapseCardButton"
+                />
+
+
+        </RelativeLayout>
+
     </RelativeLayout>
 
 </com.google.android.material.card.MaterialCardView>
