@@ -1,6 +1,7 @@
 package com.example.androidbasics;
 
 import android.content.Context;
+import android.transition.TransitionManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -52,15 +53,21 @@ public class BookRecyclerViewAdapter extends RecyclerView.Adapter<BookRecyclerVi
                 Toast.makeText(context, books.get(position).getName() + " Selected", Toast.LENGTH_LONG).show();
             }
         });
-        // 0 -> position of array
-        // isExpanded() -> true
-        // !isExpanded() -> false
-//        if(books.get(position).isExpanded()){
-//            holder.expandedRelLayout.setVisibility(View.VISIBLE);
-//            holder.downArrow.setVisibility(View.GONE);
-//        }else {
-//
-//        }
+
+        //expanded layout components
+        holder.textAuthor.setText(books.get(position).getAuthor());
+        holder.textShortDescription.setText(books.get(position).getShortDesc());
+
+        // Expanded Card UI logic
+        if(books.get(position).isExpanded()){
+            TransitionManager.beginDelayedTransition(holder.parent);
+            holder.expandedRelLayout.setVisibility(View.VISIBLE);
+            holder.downArrow.setVisibility(View.GONE);
+        }else {
+            TransitionManager.beginDelayedTransition(holder.parent);
+            holder.expandedRelLayout.setVisibility(View.GONE);
+            holder.downArrow.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
@@ -90,7 +97,7 @@ public class BookRecyclerViewAdapter extends RecyclerView.Adapter<BookRecyclerVi
             textName = itemView.findViewById(R.id.textBookName);
 
             downArrow = itemView.findViewById(R.id.expandCardButton);
-            upArrow = itemView.findViewById(R.id.collapsedCardLayout);
+            upArrow = itemView.findViewById(R.id.collapseCardButton);
             expandedRelLayout = itemView.findViewById(R.id.expandedRelLayout);
             textAuthor = itemView.findViewById(R.id.authorTextValue);
             textShortDescription = itemView.findViewById(R.id.textShortDescriptionValue);
