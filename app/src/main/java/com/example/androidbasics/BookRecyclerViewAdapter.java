@@ -1,6 +1,7 @@
 package com.example.androidbasics;
 
 import android.content.Context;
+import android.content.Intent;
 import android.transition.TransitionManager;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -50,7 +51,13 @@ public class BookRecyclerViewAdapter extends RecyclerView.Adapter<BookRecyclerVi
         holder.parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, books.get(position).getName() + " Selected", Toast.LENGTH_LONG).show();
+//                Toast.makeText(context, books.get(position).getName() + " Selected", Toast.LENGTH_LONG).show();
+                // context -> BookActivity
+                //Use Navigation -> navigate with data (Data Type -> Book Object) as props/state
+
+
+                Intent intent = new Intent(context, DetailBookActivity.class);
+                context.startActivity(intent);
             }
         });
 
