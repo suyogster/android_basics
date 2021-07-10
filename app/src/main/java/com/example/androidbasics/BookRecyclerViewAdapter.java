@@ -21,6 +21,8 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
+import static com.example.androidbasics.DetailBookActivity.BOOK_ID_KEY;
+
 public class BookRecyclerViewAdapter extends RecyclerView.Adapter<BookRecyclerViewAdapter.ViewHolder> {
 
     private static final String TAG = "BookRecyclerViewAdapter";
@@ -53,10 +55,8 @@ public class BookRecyclerViewAdapter extends RecyclerView.Adapter<BookRecyclerVi
             public void onClick(View v) {
 //                Toast.makeText(context, books.get(position).getName() + " Selected", Toast.LENGTH_LONG).show();
                 // context -> BookActivity
-                //Use Navigation -> navigate with data (Data Type -> Book Object) as props/state
-
-
                 Intent intent = new Intent(context, DetailBookActivity.class);
+                intent.putExtra(BOOK_ID_KEY, books.get(position).getId());
                 context.startActivity(intent);
             }
         });

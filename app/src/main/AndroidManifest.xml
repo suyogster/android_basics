@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ang_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidBasics">
-        <activity android:name=".DetailBookActivity"></activity>
+        <activity android:name=".CurrentlyReadingBooks"></activity>
+        <activity android:name=".AlreadyReadBookActivity" />
+        <activity android:name=".DetailBookActivity" />
         <activity android:name=".BookActivity" />
         <activity android:name=".NavigationHost" />
         <activity android:name=".RecyclerView" />

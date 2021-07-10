@@ -80,6 +80,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Creating a new instance of Utils class
+        Utils.getInstance(this);
+
     }
 
 
