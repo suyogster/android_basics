@@ -15,7 +15,7 @@ public class CurrentlyReadingBooks extends AppCompatActivity {
         setContentView(R.layout.activity_currently_reading_books);
 
         RecyclerView recyclerView = findViewById(R.id.currentlyReadingBooksView);
-        BookRecyclerViewAdapter bookRecyclerViewAdapter = new BookRecyclerViewAdapter(this);
+        BookRecyclerViewAdapter bookRecyclerViewAdapter = new BookRecyclerViewAdapter(this, "currentlyReadingBooks");
         recyclerView.setAdapter(bookRecyclerViewAdapter);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
 

@@ -2,6 +2,7 @@ package com.example.androidbasics;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -158,6 +159,46 @@ public class Utils {
                 editor.commit();
                 return true;
             }
+        }
+        return false;
+    }
+
+    public boolean removeFromAlreadyReadBooks(Book book){
+        ArrayList<Book> books = getAlreadyReadBooks();
+        if(null != books){
+            for(Book b: books){
+                if(b.getId() == book.getId()){
+                    if(books.remove(b)){
+                        Gson gson = new Gson();
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.remove(ALL_READY_READ_BOOKS);
+                        editor.putString(ALL_READY_READ_BOOKS, gson.toJson(books));
+                        editor.commit();
+                        return true;
+                    }
+                }
+            }
+
+        }
+        return false;
+    }
+
+    public boolean removeFromCurrentlyReading(Book book){
+        ArrayList<Book> books = getCurrentlyReading();
+        if(null != books){
+            for(Book b: books){
+                if(b.getId() == book.getId()){
+                    if(books.remove(b)){
+                        Gson gson = new Gson();
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.remove(CURRENTLY_READING_BOOKS);
+                        editor.putString(CURRENTLY_READING_BOOKS, gson.toJson(books));
+                        editor.commit();
+                        return true;
+                    }
+                }
+            }
+
         }
         return false;
     }

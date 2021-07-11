@@ -18,7 +18,7 @@ public class BookActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book);
 
-        bookRecyclerViewAdapter = new BookRecyclerViewAdapter(this);
+        bookRecyclerViewAdapter = new BookRecyclerViewAdapter(this, "books");
         booksRecView = findViewById(R.id.booksRecView);
 
         booksRecView.setAdapter(bookRecyclerViewAdapter);

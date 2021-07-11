@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         Button recyclerView = findViewById(R.id.recyclerViewButton);
         Button navigation = findViewById(R.id.navigationButton);
         Button booksRecyclerView = findViewById(R.id.bookRecyclerViewButton);
+        Button webViewExample = findViewById(R.id.webViewExampleButton);
 
 
         linearLayout.setOnClickListener(new View.OnClickListener() {
@@ -76,6 +78,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, BookActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        webViewExample.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, WebViewExample.class);
                 startActivity(intent);
             }
         });
